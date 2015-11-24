@@ -5,7 +5,11 @@
     <title></title>
 </head>
 <body>
-    <!--@thymesVar id="message" type="String"-->
-    <p th:text="${message}"></p>
+
+<ul>
+    <!--@thymesVar id="notes" type="Collection<Note>"-->
+    <li th:each="note : ${notes}" th:text="${note.title}"></li>
+</ul>
+
 </body>
 </html>
