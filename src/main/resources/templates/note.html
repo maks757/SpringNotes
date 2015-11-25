@@ -6,11 +6,8 @@
 </head>
 <body>
 
-<ul>
-    <li th:each="note : ${notes}">
-        <a th:href="'/notes/' + ${note.id}" th:text="${note.title}"></a>
-    </li>
-</ul>
+<input type="text" th:value="${note.title}"/><br/><br/>
+<textarea name="" id="" cols="30" rows="10" th:value="${note.text}"></textarea>
 
 </body>
 </html>

@@ -8,13 +8,16 @@ import java.util.Collection;
 public interface NotesRepository extends CrudRepository<Note, Long> {
 
     @Override
-    Collection<Note> findAll();
-
-    @Override
     Note findOne(Long id);
 
     @Override
-    Note save(Note entity);
+    Note save(Note note);
+
+    @Override
+    Collection<Note> findAll();
+
+    @Override
+    long count();
 
     @Override
     void delete(Long id);

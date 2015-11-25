@@ -9,9 +9,10 @@ public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
     private String title;
     private String text;
+
+    @Column(name = "owner_id")
     private long ownerId;
 
     public Note() {
