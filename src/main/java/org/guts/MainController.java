@@ -36,4 +36,23 @@ public class MainController {
         return "redirect:/notes";
     }
 
+    @RequestMapping(value = "/notes/{noteId}", method = RequestMethod.GET)
+    public String editNote(@PathVariable("noteId") Long noteId, Model model) {
+        model.addAttribute("note", notesService.findNoteById(noteId));
+        return "note_edit";
+    }
+
+    @RequestMapping(value = "/notes/{noteId}", method = RequestMethod.POST)
+    public String updateNote(
+            @PathVariable("noteId") Long noteId,
+            @RequestParam("title") String title,
+            @RequestParam("text") String text) {
+
+        Note note = new Note(title, text, 1);
+        note.setId(noteId);
+        notesService.saveNote(note);
+
+        return "redirect:/notes";
+    }
+
 }
