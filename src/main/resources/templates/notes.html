@@ -6,9 +6,19 @@
 </head>
 <body>
 
+<form action="/notes/add" method="post">
+
+    <input type="text" name="title"/>
+    <br/> <br/>
+    <textarea name="text" id="" cols="30" rows="10"></textarea>
+    <br/> <br/>
+
+    <input type="submit" value="Add"/>
+</form>
+
 <ul>
     <li th:each="note : ${notes}">
-        <a th:href="'/notes/' + ${note.id}" th:text="${note.title}"></a>
+        <a href="#" th:text="${note.title}"></a>
     </li>
 </ul>
 
