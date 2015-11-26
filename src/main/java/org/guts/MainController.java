@@ -55,4 +55,10 @@ public class MainController {
         return "redirect:/notes";
     }
 
+    @RequestMapping("/notes/remove/{noteId}")
+    public String removeNote(@PathVariable("noteId") Long noteId) {
+        notesService.remove(noteId);
+        return "redirect:/notes";
+    }
+
 }

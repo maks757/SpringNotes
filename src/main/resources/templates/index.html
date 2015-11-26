@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
-    <meta charset="UTF-8" />
-    <title></title>
+
+<head th:replace="layouts/main :: head" >
+    <!-- head from layout -->
 </head>
+
 <body>
     <!--@thymesVar id="message" type="String"-->
     <p th:text="${message}"></p>

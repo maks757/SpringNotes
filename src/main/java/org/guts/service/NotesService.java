@@ -8,4 +8,5 @@ public interface NotesService {
     Note findNoteById(Long id);
     Collection<Note> findNotes();
     void saveNote(Note note);
+    void remove(Long id);
 }

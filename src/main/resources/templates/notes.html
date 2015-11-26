@@ -19,6 +19,7 @@
 <ul>
     <li th:each="note : ${notes}">
         <a th:href="'/notes/' + ${note.id}" th:text="${note.title}"></a>
+        <a th:href="'/notes/remove/' + ${note.id}">X</a>
     </li>
 </ul>
 

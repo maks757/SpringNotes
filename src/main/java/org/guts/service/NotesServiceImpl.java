@@ -27,4 +27,9 @@ public class NotesServiceImpl implements NotesService {
     public void saveNote(Note note) {
         notesRepository.save(note);
     }
+
+    @Override
+    public void remove(Long id) {
+        notesRepository.delete(id);
+    }
 }
