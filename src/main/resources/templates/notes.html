@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
-    <meta charset="UTF-8" />
-    <title></title>
+
+<head th:replace="layouts/main :: head" >
+    <!-- head from layout -->
 </head>
+
 <body>
+    <header th:replace="layouts/main :: header">
+        <!-- header from layout -->
+    </header>
 
-<form action="/notes/add" method="post">
+    <section class="main">
 
-    <input type="text" name="title"/>
-    <br/> <br/>
-    <textarea name="text" id="" cols="30" rows="10"></textarea>
-    <br/> <br/>
+        <form action="/notes/add" method="post">
 
-    <input type="submit" value="Add"/>
-</form>
+            <input class="form-control" placeholder="Title" type="text" name="title"/>
+            <br/>
+            <textarea class="form-control" placeholder="Text" name="text" id="" cols="30" rows="10"></textarea>
+            <br/>
+            <input class="btn btn-success" type="submit" value="Add"/>
+        </form>
+        <br/>
+        <div class="panel panel-default">
+            <div class="panel-heading">Notes List</div>
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                </tr>
+                <tr th:each="note : ${notes}">
+                    <td class="col-md-1" th:text="${note.id}"></td>
+                    <td th:text="${note.title}"></td>
+                    <td class="col-md-1">
+                        <a class="label label-warning col-md-offset-1 col-md-5" th:href="'/notes/' + ${note.id}" >
+                            Edit
+                        </a>
+                        <a class="label label-danger col-md-offset-1 col-md-5" th:href="'/notes/remove/' + ${note.id}" >
+                            Del
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-<ul>
-    <li th:each="note : ${notes}">
-        <a th:href="'/notes/' + ${note.id}" th:text="${note.title}"></a>
-        <a th:href="'/notes/remove/' + ${note.id}">X</a>
-    </li>
-</ul>
-
+    </section>
 </body>
 </html>
