@@ -5,14 +5,26 @@
     <meta charset="UTF-8" />
     <title></title>
 
-
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="/css/style.css"/>
 
     <script src="/webjars/jquery/2.1.4/jquery.min.js"></script>
     <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+
+    <header th:fragment="header">
+        <nav class="navbar navbar-default" role="navigation">
+            <a class="navbar-brand" href="/">Notes Application</a>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/notes">Notes</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
 </body>
 </html>

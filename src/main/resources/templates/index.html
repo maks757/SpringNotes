@@ -6,7 +6,15 @@
 </head>
 
 <body>
-    <!--@thymesVar id="message" type="String"-->
-    <p th:text="${message}"></p>
+
+    <header th:replace="layouts/main :: header">
+        <!-- header from layout -->
+    </header>
+
+    <section class="main">
+        <!--@thymesVar id="message" type="String"-->
+        <p th:text="${message}"></p>
+    </section>
+
 </body>
 </html>
