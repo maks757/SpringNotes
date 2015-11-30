@@ -12,4 +12,5 @@ public interface UsersService {
     Collection<User> findUsers();
     void delete(Long id);
     void save(User user);
+    void register(String username, String password, String cpassword);
 }

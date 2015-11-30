@@ -1,4 +1,4 @@
-package org.guts;
+package org.guts.controllers;
 
 import org.guts.entity.Note;
 import org.guts.service.NotesService;
