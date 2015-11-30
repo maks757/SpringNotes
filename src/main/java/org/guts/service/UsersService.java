@@ -1,6 +1,8 @@
 package org.guts.service;
 
 import org.guts.entity.User;
+import org.guts.model.exceptions.FormException;
+import org.guts.model.form.RegisterUserForm;
 
 import java.util.Collection;
 
@@ -12,5 +14,5 @@ public interface UsersService {
     Collection<User> findUsers();
     void delete(Long id);
     void save(User user);
-    void register(String username, String password, String cpassword);
+    void register(RegisterUserForm model) throws FormException;
 }

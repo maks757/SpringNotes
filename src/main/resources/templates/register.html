@@ -15,9 +15,15 @@
 
     <h1>Register</h1>
 
+    <div th:if="${not #lists.isEmpty(errors)}" class="alert alert-danger">
+        <p th:each="error : ${errors}">
+            <span th:text="${error.defaultMessage}"></span>
+        </p>
+    </div>
+
     <form action="" method="post">
 
-        <input class="form-control" placeholder="UserName"  type="text" name="username" />
+        <input class="form-control" placeholder="UserName"  type="text" name="username" th:value="${model.username}" />
         <br/>
         <input class="form-control" placeholder="Password"  type="password" name="password" />
         <br/>
