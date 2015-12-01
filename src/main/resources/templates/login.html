@@ -15,6 +15,10 @@
 
     <h1>Login Page</h1>
 
+    <div th:if="${param.error}" th:text="${param.error}">
+
+    </div>
+
     <form action="/login" method="post">
         <input class="form-control" type="text" name="username" placeholder="Username"/>
         <br/>
