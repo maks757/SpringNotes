@@ -15,6 +15,10 @@ public class Note {
     @Column(name = "owner_id")
     private long ownerId;
 
+    @ManyToOne(optional=false)
+    @JoinColumn(name="owner_id", nullable=false, updatable=false, insertable = false)
+    private User owner;
+
     public Note() {
     }
 
@@ -54,5 +58,13 @@ public class Note {
 
     public void setOwnerId(long ownerId) {
         this.ownerId = ownerId;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }

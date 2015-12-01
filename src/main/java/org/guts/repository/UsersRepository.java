@@ -9,6 +9,8 @@ import java.util.Collection;
  * Created by Gutsulyak Vadim <guts.vadim@gmail.com>.
  */
 public interface UsersRepository extends CrudRepository<User, Long> {
+    User findByUsername(String username);
+
     @Override
     User save(User user);
 

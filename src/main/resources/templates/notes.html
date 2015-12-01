@@ -27,10 +27,12 @@
                 <tr>
                     <th>Id</th>
                     <th>Title</th>
+                    <th>Owner</th>
                 </tr>
                 <tr th:each="note : ${notes}">
                     <td class="col-md-1" th:text="${note.id}"></td>
                     <td th:text="${note.title}"></td>
+                    <td th:text="${note.owner.username}"></td>
                     <td class="col-md-1">
                         <a class="label label-warning col-md-offset-1 col-md-5" th:href="'/notes/' + ${note.id}" >
                             Edit
