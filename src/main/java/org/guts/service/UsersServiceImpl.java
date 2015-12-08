@@ -7,6 +7,8 @@ import org.guts.model.validation.RegisterUserFormValidation;
 import org.guts.repository.NotesRepository;
 import org.guts.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.MapBindingResult;
 import org.springframework.validation.ObjectError;
@@ -58,5 +60,12 @@ public class UsersServiceImpl implements UsersService {
             User user = new User(model.getUsername(), model.getPassword());
             usersRepository.save(user);
         }
+    }
+
+    @Override
+    public User getCurrentUser() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        return usersRepository.findByUsername(username);
     }
 }

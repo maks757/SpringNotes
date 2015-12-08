@@ -9,4 +9,7 @@ public interface NotesService {
     Collection<Note> findNotes();
     void saveNote(Note note);
     void remove(Long id);
+    void createNote(String title, String text);
+    void changeNote(Long id, String title, String text);
+    void isNoteUser(Long idNotes);
 }

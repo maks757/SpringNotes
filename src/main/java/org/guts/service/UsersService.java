@@ -15,4 +15,5 @@ public interface UsersService {
     void delete(Long id);
     void save(User user);
     void register(RegisterUserForm model) throws FormException;
+    User getCurrentUser();
 }

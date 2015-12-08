@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layouts/main :: head" >
+    <!-- head from layout -->
+</head>
+
+<body>
+
+<header th:replace="layouts/main :: header">
+    <!-- header from layout -->
+</header>
+
+<section class="main">
+    <!--@thymesVar id="message_error" type="String"-->
+    <p th:text="${message_error}"></p>
+</section>
+
+</body>
+</html>
